@@ -48,6 +48,9 @@ Thumbs.db
 # Models (optional - uncomment if models are too large)
 # models/*.pkl
 
+# Large data files (exceeds GitHub 100MB limit)
+data/all_merged_data.csv
+
 # Logs
 *.log
 
