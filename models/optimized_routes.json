@@ -1,0 +1,2177 @@
+[
+  {
+    "vehicle_id": 1,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 2558,
+        "neighborhood_id": 40,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.24609604506053,
+        "longitude": 28.910698096666,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "İNEGAZİ MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2515,
+        "neighborhood_id": 39,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.23200622181692,
+        "longitude": 28.903796379103188,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "İHSANİYE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2545,
+        "neighborhood_id": 40,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.23221317524166,
+        "longitude": 28.934290661000155,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "İNEGAZİ MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2418,
+        "neighborhood_id": 61,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.15423293138583,
+        "longitude": 28.886778773853013,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÜRÜNLÜ MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 13.83,
+    "total_load_liters": 6593.0,
+    "capacity_usage_percent": 82.41,
+    "container_count": 4
+  },
+  {
+    "vehicle_id": 2,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 2337,
+        "neighborhood_id": 23,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.2306435784908,
+        "longitude": 28.89712203077667,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAYLI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2281,
+        "neighborhood_id": 22,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.22614872211956,
+        "longitude": 28.887704947216832,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇATALAĞIL MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2311,
+        "neighborhood_id": 23,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.24478121930259,
+        "longitude": 28.888100486028247,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAYLI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2305,
+        "neighborhood_id": 23,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.19519419678464,
+        "longitude": 28.867142637717425,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAYLI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2206,
+        "neighborhood_id": 133,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.15526992723209,
+        "longitude": 28.916923860200132,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAMLICA MAH.",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 14.94,
+    "total_load_liters": 6973.0,
+    "capacity_usage_percent": 87.16,
+    "container_count": 5
+  },
+  {
+    "vehicle_id": 3,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 2173,
+        "neighborhood_id": 20,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.19199075829867,
+        "longitude": 28.942577347354167,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇALI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2145,
+        "neighborhood_id": 64,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.236488742775876,
+        "longitude": 28.93693921239952,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "YÜZÜNCÜYIL MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 4.97,
+    "total_load_liters": 5130.0,
+    "capacity_usage_percent": 64.12,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 4,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1989,
+        "neighborhood_id": 57,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.16594653386643,
+        "longitude": 28.94082046823024,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "TAHTALI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1963,
+        "neighborhood_id": 55,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.1593345237479,
+        "longitude": 28.86921058463051,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ODUNLUK MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1966,
+        "neighborhood_id": 57,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.22319085451286,
+        "longitude": 28.915362570908506,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "TAHTALI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 14.24,
+    "total_load_liters": 6213.0,
+    "capacity_usage_percent": 77.66,
+    "container_count": 3
+  },
+  {
+    "vehicle_id": 6,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1915,
+        "neighborhood_id": 138,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.233534952012654,
+        "longitude": 28.861850169089056,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "NİLÜFER MAH.",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1729,
+        "neighborhood_id": 49,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.224291162634344,
+        "longitude": 28.890052907418028,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1745,
+        "neighborhood_id": 49,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.20339983884369,
+        "longitude": 28.898093540325686,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1730,
+        "neighborhood_id": 49,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.19152951166794,
+        "longitude": 28.88446824770602,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 6.78,
+    "total_load_liters": 5434.0,
+    "capacity_usage_percent": 67.92,
+    "container_count": 4
+  },
+  {
+    "vehicle_id": 7,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1705,
+        "neighborhood_id": 49,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.187192556861866,
+        "longitude": 28.888586181234274,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1513,
+        "neighborhood_id": 45,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.1871218797407,
+        "longitude": 28.86756462640766,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KAYAPA MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1492,
+        "neighborhood_id": 44,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.19831757237501,
+        "longitude": 28.85513718851962,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KARAMAN MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1499,
+        "neighborhood_id": 44,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.23521623396497,
+        "longitude": 28.85010519293883,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KARAMAN MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1572,
+        "neighborhood_id": 46,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.16417673089382,
+        "longitude": 28.915761666488965,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KIZILCIKLI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 17.21,
+    "total_load_liters": 6621.5,
+    "capacity_usage_percent": 82.77,
+    "container_count": 5
+  },
+  {
+    "vehicle_id": 8,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1475,
+        "neighborhood_id": 44,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.18673827047056,
+        "longitude": 28.89998373612859,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KARAMAN MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1400,
+        "neighborhood_id": 42,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.158659893169215,
+        "longitude": 28.87099839852359,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KADRİYE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1401,
+        "neighborhood_id": 42,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.160236192420385,
+        "longitude": 28.8627179354144,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KADRİYE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 4.7,
+    "total_load_liters": 5358.0,
+    "capacity_usage_percent": 66.97,
+    "container_count": 3
+  },
+  {
+    "vehicle_id": 9,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1364,
+        "neighborhood_id": 38,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.18085954103541,
+        "longitude": 28.896481555487373,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "IŞIKTEPE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1320,
+        "neighborhood_id": 37,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.163431704051234,
+        "longitude": 28.86484829814368,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "HASANAĞA MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1306,
+        "neighborhood_id": 36,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.21775330841936,
+        "longitude": 28.89768956606273,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÜNGÖREN MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1359,
+        "neighborhood_id": 38,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.21963101613613,
+        "longitude": 28.90093326669258,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "IŞIKTEPE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1343,
+        "neighborhood_id": 37,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.244771125288764,
+        "longitude": 28.862391212602546,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "HASANAĞA MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 14.62,
+    "total_load_liters": 6973.0,
+    "capacity_usage_percent": 87.16,
+    "container_count": 5
+  },
+  {
+    "vehicle_id": 12,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1289,
+        "neighborhood_id": 36,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.186127679139474,
+        "longitude": 28.87727011435848,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÜNGÖREN MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1104,
+        "neighborhood_id": 32,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.19231598444734,
+        "longitude": 28.89836043109363,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÖKÇE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1047,
+        "neighborhood_id": 31,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.20840938310822,
+        "longitude": 28.902301355144978,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "FETHİYE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1048,
+        "neighborhood_id": 31,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.20192734194961,
+        "longitude": 28.918018778763244,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "FETHİYE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1257,
+        "neighborhood_id": 35,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.15656795276561,
+        "longitude": 28.933546080533425,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÜMÜŞTEPE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 1077,
+        "neighborhood_id": 31,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.214175921769055,
+        "longitude": 28.850484134247083,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "FETHİYE MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 20.0,
+    "total_load_liters": 6849.5,
+    "capacity_usage_percent": 85.62,
+    "container_count": 6
+  },
+  {
+    "vehicle_id": 17,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 979,
+        "neighborhood_id": 134,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.23051036847788,
+        "longitude": 28.90626083926237,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ERTUğRUL MAH.",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 734,
+        "neighborhood_id": 19,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.247472460539,
+        "longitude": 28.876722643008765,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "CUMHURİYET MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 933,
+        "neighborhood_id": 28,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.1887838705178,
+        "longitude": 28.869213162984042,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ERTUĞRUL MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 745,
+        "neighborhood_id": 19,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.17047819465133,
+        "longitude": 28.909282156095077,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "CUMHURİYET MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 925,
+        "neighborhood_id": 28,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.15244927239463,
+        "longitude": 28.880015872445878,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ERTUĞRUL MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 16.86,
+    "total_load_liters": 6821.0,
+    "capacity_usage_percent": 85.26,
+    "container_count": 5
+  },
+  {
+    "vehicle_id": 20,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 716,
+        "neighborhood_id": 18,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.24080811415894,
+        "longitude": 28.937674338001667,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BÜYÜKBALIKLI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 698,
+        "neighborhood_id": 18,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.2035833258546,
+        "longitude": 28.879704345151623,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BÜYÜKBALIKLI MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 6.43,
+    "total_load_liters": 4978.0,
+    "capacity_usage_percent": 62.22,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 21,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 678,
+        "neighborhood_id": 17,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.168432658309484,
+        "longitude": 28.8537920897076,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BEŞEVLER MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 642,
+        "neighborhood_id": 132,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.163326175950274,
+        "longitude": 28.8560232125574,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BEŞEVLER MAH.",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 585,
+        "neighborhood_id": 15,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.18753334455382,
+        "longitude": 28.876081493172425,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BARIŞ MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 487,
+        "neighborhood_id": 13,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.19974405171374,
+        "longitude": 28.885896058715804,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BALAT MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 564,
+        "neighborhood_id": 129,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.182851663730276,
+        "longitude": 28.896266180753795,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BARIŞ MAH.",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 558,
+        "neighborhood_id": 129,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.19639984690862,
+        "longitude": 28.947183659778855,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BARIŞ MAH.",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 441,
+        "neighborhood_id": 12,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.22130688705357,
+        "longitude": 28.87267319708503,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BADIRGA MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 18.94,
+    "total_load_liters": 6925.5,
+    "capacity_usage_percent": 86.57,
+    "container_count": 7
+  },
+  {
+    "vehicle_id": 22,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 415,
+        "neighborhood_id": 11,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.19359309552549,
+        "longitude": 28.910810321107423,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "AYVAKÖY MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 370,
+        "neighborhood_id": 10,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.187301448533916,
+        "longitude": 28.89017687252713,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ATLAS MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 263,
+        "neighborhood_id": 7,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.171424103712816,
+        "longitude": 28.850057196494298,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ALAADDİNBEY MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 373,
+        "neighborhood_id": 10,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.21887964948184,
+        "longitude": 28.851259778497994,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ATLAS MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 262,
+        "neighborhood_id": 7,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.156714308884894,
+        "longitude": 28.93112050577574,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ALAADDİNBEY MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 20.69,
+    "total_load_liters": 5966.0,
+    "capacity_usage_percent": 74.58,
+    "container_count": 5
+  },
+  {
+    "vehicle_id": 24,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 108,
+        "neighborhood_id": 4,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.22926068292149,
+        "longitude": 28.896854206160068,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "30 AĞUSTOS ZAFER MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 4750.0,
+    "capacity_usage_percent": 59.38,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 33,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 60,
+        "neighborhood_id": 3,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.170307373512586,
+        "longitude": 28.945854858266813,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "29 EKİM MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      },
+      {
+        "container_id": 2319,
+        "neighborhood_id": 23,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.163067766674075,
+        "longitude": 28.908688403702893,
+        "fill_level": 0.9464527681703485,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAYLI MAHALLESİ",
+        "collection_priority": 0.8732263840851743
+      },
+      {
+        "container_id": 1375,
+        "neighborhood_id": 38,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.20168151880177,
+        "longitude": 28.928986108614154,
+        "fill_level": 0.9497314127077511,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "IŞIKTEPE MAHALLESİ",
+        "collection_priority": 0.8748657063538755
+      },
+      {
+        "container_id": 2435,
+        "neighborhood_id": 61,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.225867297300724,
+        "longitude": 28.943020331122124,
+        "fill_level": 0.9499878069931744,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÜRÜNLÜ MAHALLESİ",
+        "collection_priority": 0.8749939034965871
+      },
+      {
+        "container_id": 1171,
+        "neighborhood_id": 135,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.23945220996417,
+        "longitude": 28.928407856634678,
+        "fill_level": 0.9468525555655507,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÖRÜKLE MAH.",
+        "collection_priority": 0.8734262777827754
+      },
+      {
+        "container_id": 2445,
+        "neighborhood_id": 59,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.23008660633596,
+        "longitude": 28.897014611404916,
+        "fill_level": 0.9498430162604411,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÜÇEVLER MAHALLESİ",
+        "collection_priority": 0.8749215081302205
+      },
+      {
+        "container_id": 12,
+        "neighborhood_id": 1,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.21883909153837,
+        "longitude": 28.879463978447944,
+        "fill_level": 0.95,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "19 MAYIS MAHALLESİ",
+        "collection_priority": 0.8749999999999999
+      }
+    ],
+    "total_distance_km": 17.59,
+    "total_load_liters": 3558.39,
+    "capacity_usage_percent": 44.48,
+    "container_count": 7
+  },
+  {
+    "vehicle_id": 36,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 2254,
+        "neighborhood_id": 21,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.202725177694234,
+        "longitude": 28.929659627000525,
+        "fill_level": 0.9459639103490216,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAMLICA MAHALLESİ",
+        "collection_priority": 0.8729819551745107
+      },
+      {
+        "container_id": 166,
+        "neighborhood_id": 5,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.207459063382096,
+        "longitude": 28.9348252493011,
+        "fill_level": 0.9437724337441877,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "AHMET YESEVİ MAHALLESİ",
+        "collection_priority": 0.8718862168720939
+      },
+      {
+        "container_id": 1448,
+        "neighborhood_id": 43,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.18876578204105,
+        "longitude": 28.9200904711279,
+        "fill_level": 0.9443339774887488,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KARACAOBA MAHALLESİ",
+        "collection_priority": 0.8721669887443744
+      },
+      {
+        "container_id": 885,
+        "neighborhood_id": 27,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.2121000492588,
+        "longitude": 28.896110812867654,
+        "fill_level": 0.9420286042171875,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "DUMLUPINAR MAHALLESİ",
+        "collection_priority": 0.8710143021085938
+      },
+      {
+        "container_id": 2283,
+        "neighborhood_id": 22,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.20623949113955,
+        "longitude": 28.860470762503322,
+        "fill_level": 0.9407992389448778,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇATALAĞIL MAHALLESİ",
+        "collection_priority": 0.8703996194724389
+      },
+      {
+        "container_id": 1233,
+        "neighborhood_id": 34,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.23756964814869,
+        "longitude": 28.87720369837037,
+        "fill_level": 0.9447474928685866,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÖRÜKLE MAHALLESİ",
+        "collection_priority": 0.8723737464342932
+      },
+      {
+        "container_id": 2232,
+        "neighborhood_id": 21,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.24591247087554,
+        "longitude": 28.883085025974022,
+        "fill_level": 0.9429398374817074,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAMLICA MAHALLESİ",
+        "collection_priority": 0.8714699187408537
+      },
+      {
+        "container_id": 1938,
+        "neighborhood_id": 55,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.24806075094757,
+        "longitude": 28.946011541599784,
+        "fill_level": 0.9408061884014347,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ODUNLUK MAHALLESİ",
+        "collection_priority": 0.8704030942007174
+      },
+      {
+        "container_id": 1935,
+        "neighborhood_id": 55,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.16338866270661,
+        "longitude": 28.884451998408615,
+        "fill_level": 0.9453016396648131,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ODUNLUK MAHALLESİ",
+        "collection_priority": 0.8726508198324064
+      }
+    ],
+    "total_distance_km": 30.44,
+    "total_load_liters": 7618.84,
+    "capacity_usage_percent": 95.24,
+    "container_count": 9
+  },
+  {
+    "vehicle_id": 37,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 2092,
+        "neighborhood_id": 63,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.24843438137484,
+        "longitude": 28.854385918518542,
+        "fill_level": 0.9402494843251364,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "YOLÇATI MAHALLESİ",
+        "collection_priority": 0.8701247421625682
+      },
+      {
+        "container_id": 724,
+        "neighborhood_id": 18,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.24569715053274,
+        "longitude": 28.88563907428103,
+        "fill_level": 0.9372312267218386,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BÜYÜKBALIKLI MAHALLESİ",
+        "collection_priority": 0.8686156133609192
+      },
+      {
+        "container_id": 1817,
+        "neighborhood_id": 51,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.24801761964869,
+        "longitude": 28.88960404109589,
+        "fill_level": 0.9367652017852786,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KURUÇEŞME MAHALLESİ",
+        "collection_priority": 0.8683826008926393
+      },
+      {
+        "container_id": 308,
+        "neighborhood_id": 8,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.212022963210536,
+        "longitude": 28.888662142315365,
+        "fill_level": 0.9396279553703359,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ALTINŞEHİR MAHALLESİ",
+        "collection_priority": 0.869813977685168
+      },
+      {
+        "container_id": 1313,
+        "neighborhood_id": 36,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.20252702485888,
+        "longitude": 28.934254240868697,
+        "fill_level": 0.9391931919153219,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÜNGÖREN MAHALLESİ",
+        "collection_priority": 0.8695965959576609
+      },
+      {
+        "container_id": 667,
+        "neighborhood_id": 17,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.1765970221132,
+        "longitude": 28.853498106399645,
+        "fill_level": 0.9397920598255136,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BEŞEVLER MAHALLESİ",
+        "collection_priority": 0.8698960299127568
+      }
+    ],
+    "total_distance_km": 18.55,
+    "total_load_liters": 6958.76,
+    "capacity_usage_percent": 86.98,
+    "container_count": 6
+  },
+  {
+    "vehicle_id": 39,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 190,
+        "neighborhood_id": 5,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.23974104316087,
+        "longitude": 28.851374914847224,
+        "fill_level": 0.9366892942987227,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "AHMET YESEVİ MAHALLESİ",
+        "collection_priority": 0.8683446471493613
+      },
+      {
+        "container_id": 242,
+        "neighborhood_id": 136,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.22243272056445,
+        "longitude": 28.8866531979596,
+        "fill_level": 0.933693714268586,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ALAADDINBEY MAH.",
+        "collection_priority": 0.866846857134293
+      },
+      {
+        "container_id": 387,
+        "neighborhood_id": 10,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.18138110543868,
+        "longitude": 28.914108555348427,
+        "fill_level": 0.9335191772472211,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ATLAS MAHALLESİ",
+        "collection_priority": 0.8667595886236105
+      },
+      {
+        "container_id": 832,
+        "neighborhood_id": 26,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.17673167669653,
+        "longitude": 28.925322236632535,
+        "fill_level": 0.9334186683445135,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "DOĞANKÖY MAHALLESİ",
+        "collection_priority": 0.8667093341722567
+      },
+      {
+        "container_id": 1054,
+        "neighborhood_id": 31,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.16417430986519,
+        "longitude": 28.929142659819366,
+        "fill_level": 0.9361496383224327,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "FETHİYE MAHALLESİ",
+        "collection_priority": 0.8680748191612163
+      },
+      {
+        "container_id": 1744,
+        "neighborhood_id": 49,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.16006961116018,
+        "longitude": 28.93736433027414,
+        "fill_level": 0.9359826921724654,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8679913460862326
+      },
+      {
+        "container_id": 2196,
+        "neighborhood_id": 133,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.15198559733365,
+        "longitude": 28.878058606011855,
+        "fill_level": 0.9327988596427513,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAMLICA MAH.",
+        "collection_priority": 0.8663994298213756
+      },
+      {
+        "container_id": 1302,
+        "neighborhood_id": 36,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.17605811431914,
+        "longitude": 28.850354603619728,
+        "fill_level": 0.9365891198075823,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÜNGÖREN MAHALLESİ",
+        "collection_priority": 0.8682945599037911
+      }
+    ],
+    "total_distance_km": 20.72,
+    "total_load_liters": 7150.46,
+    "capacity_usage_percent": 89.38,
+    "container_count": 8
+  },
+  {
+    "vehicle_id": 41,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 549,
+        "neighborhood_id": 129,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.1501026586782,
+        "longitude": 28.915162364104948,
+        "fill_level": 0.9320302668369245,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BARIŞ MAH.",
+        "collection_priority": 0.8660151334184621
+      },
+      {
+        "container_id": 1262,
+        "neighborhood_id": 35,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.23814694937051,
+        "longitude": 28.86167167701282,
+        "fill_level": 0.9306676874340705,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÜMÜŞTEPE MAHALLESİ",
+        "collection_priority": 0.8653338437170351
+      }
+    ],
+    "total_distance_km": 10.79,
+    "total_load_liters": 5376.77,
+    "capacity_usage_percent": 67.21,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 42,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 2212,
+        "neighborhood_id": 133,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.23809845374797,
+        "longitude": 28.89659070224043,
+        "fill_level": 0.9270764432987983,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAMLICA MAH.",
+        "collection_priority": 0.8635382216493991
+      },
+      {
+        "container_id": 1330,
+        "neighborhood_id": 37,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.21791779305151,
+        "longitude": 28.862953928772807,
+        "fill_level": 0.9253530863143327,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "HASANAĞA MAHALLESİ",
+        "collection_priority": 0.8626765431571662
+      },
+      {
+        "container_id": 2536,
+        "neighborhood_id": 40,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.166782411541945,
+        "longitude": 28.928448982238404,
+        "fill_level": 0.9238701215591579,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "İNEGAZİ MAHALLESİ",
+        "collection_priority": 0.8619350607795789
+      },
+      {
+        "container_id": 777,
+        "neighborhood_id": 24,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.162774890647896,
+        "longitude": 28.94515814138438,
+        "fill_level": 0.9237189377088315,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "DAĞYENİCE MAHALLESİ",
+        "collection_priority": 0.8618594688544158
+      }
+    ],
+    "total_distance_km": 13.07,
+    "total_load_liters": 6770.55,
+    "capacity_usage_percent": 84.63,
+    "container_count": 4
+  },
+  {
+    "vehicle_id": 45,
+    "vehicle_type": "Büyük Çöp Kamyonu",
+    "vehicle_capacity": 8000.0,
+    "containers": [
+      {
+        "container_id": 1368,
+        "neighborhood_id": 38,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.184826933324764,
+        "longitude": 28.86142218712011,
+        "fill_level": 0.9224830917835459,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "IŞIKTEPE MAHALLESİ",
+        "collection_priority": 0.8612415458917729
+      },
+      {
+        "container_id": 2477,
+        "neighborhood_id": 59,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.18264893635332,
+        "longitude": 28.85839478595202,
+        "fill_level": 0.9209410219558316,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÜÇEVLER MAHALLESİ",
+        "collection_priority": 0.8604705109779157
+      },
+      {
+        "container_id": 1248,
+        "neighborhood_id": 35,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.180040100001655,
+        "longitude": 28.85532212264347,
+        "fill_level": 0.9193364458205296,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "GÜMÜŞTEPE MAHALLESİ",
+        "collection_priority": 0.8596682229102648
+      },
+      {
+        "container_id": 1305,
+        "neighborhood_id": 36,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.17231923063771,
+        "longitude": 28.88501108410705,
+        "fill_level": 0.9181578931467932,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "GÜNGÖREN MAHALLESİ",
+        "collection_priority": 0.8590789465733966
+      },
+      {
+        "container_id": 1734,
+        "neighborhood_id": 49,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.18430974251944,
+        "longitude": 28.91902718549213,
+        "fill_level": 0.9203558826654273,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8601779413327136
+      },
+      {
+        "container_id": 430,
+        "neighborhood_id": 12,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.23311662401397,
+        "longitude": 28.911338838819756,
+        "fill_level": 0.9208606974443759,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BADIRGA MAHALLESİ",
+        "collection_priority": 0.8604303487221879
+      },
+      {
+        "container_id": 369,
+        "neighborhood_id": 10,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.23945261503446,
+        "longitude": 28.94133705629034,
+        "fill_level": 0.9190800276425595,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ATLAS MAHALLESİ",
+        "collection_priority": 0.8595400138212798
+      }
+    ],
+    "total_distance_km": 14.7,
+    "total_load_liters": 7002.84,
+    "capacity_usage_percent": 87.54,
+    "container_count": 7
+  },
+  {
+    "vehicle_id": 10,
+    "vehicle_type": "Küçük Çöp Kamyonu",
+    "vehicle_capacity": 3000.0,
+    "containers": [
+      {
+        "container_id": 2578,
+        "neighborhood_id": 41,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.160476844083526,
+        "longitude": 28.939450898055444,
+        "fill_level": 0.9180425482705032,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "İRFANİYE MAHALLESİ",
+        "collection_priority": 0.8590212741352515
+      },
+      {
+        "container_id": 2389,
+        "neighborhood_id": 56,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.16308498850046,
+        "longitude": 28.89897439162786,
+        "fill_level": 0.9179318089094702,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÖZLÜCE MAHALLESİ",
+        "collection_priority": 0.8589659044547351
+      }
+    ],
+    "total_distance_km": 3.45,
+    "total_load_liters": 587.5,
+    "capacity_usage_percent": 19.58,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 27,
+    "vehicle_type": "Küçük Çöp Kamyonu",
+    "vehicle_capacity": 3000.0,
+    "containers": [
+      {
+        "container_id": 1746,
+        "neighborhood_id": 49,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.20172773212313,
+        "longitude": 28.902838191025605,
+        "fill_level": 0.9178456499848958,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8589228249924479
+      },
+      {
+        "container_id": 1706,
+        "neighborhood_id": 49,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.21715295491392,
+        "longitude": 28.942835208837494,
+        "fill_level": 0.9165663299586685,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8582831649793342
+      },
+      {
+        "container_id": 1562,
+        "neighborhood_id": 46,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.249279141491535,
+        "longitude": 28.938766960266005,
+        "fill_level": 0.9171985958673963,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KIZILCIKLI MAHALLESİ",
+        "collection_priority": 0.8585992979336982
+      }
+    ],
+    "total_distance_km": 7.39,
+    "total_load_liters": 1440.01,
+    "capacity_usage_percent": 48.0,
+    "container_count": 3
+  },
+  {
+    "vehicle_id": 31,
+    "vehicle_type": "Küçük Çöp Kamyonu",
+    "vehicle_capacity": 3000.0,
+    "containers": [
+      {
+        "container_id": 1494,
+        "neighborhood_id": 44,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.195194560323785,
+        "longitude": 28.896427785009536,
+        "fill_level": 0.9162646104316104,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "KARAMAN MAHALLESİ",
+        "collection_priority": 0.8581323052158052
+      },
+      {
+        "container_id": 1585,
+        "neighborhood_id": 131,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.1670438878126,
+        "longitude": 28.86738426851369,
+        "fill_level": 0.9161949814533907,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "KONAK MAH.",
+        "collection_priority": 0.8580974907266953
+      },
+      {
+        "container_id": 2307,
+        "neighborhood_id": 23,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.239344064165664,
+        "longitude": 28.875231902013233,
+        "fill_level": 0.9159604707530851,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "ÇAYLI MAHALLESİ",
+        "collection_priority": 0.8579802353765426
+      }
+    ],
+    "total_distance_km": 12.05,
+    "total_load_liters": 1145.2,
+    "capacity_usage_percent": 38.17,
+    "container_count": 3
+  },
+  {
+    "vehicle_id": 38,
+    "vehicle_type": "Küçük Çöp Kamyonu",
+    "vehicle_capacity": 3000.0,
+    "containers": [
+      {
+        "container_id": 1393,
+        "neighborhood_id": 42,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.222112302337074,
+        "longitude": 28.91844529112325,
+        "fill_level": 0.9150335006499027,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "KADRİYE MAHALLESİ",
+        "collection_priority": 0.8575167503249513
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 4575.17,
+    "capacity_usage_percent": 100.0,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 5,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 680,
+        "neighborhood_id": 17,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.170952501969396,
+        "longitude": 28.898188313620306,
+        "fill_level": 0.9149259632714527,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "BEŞEVLER MAHALLESİ",
+        "collection_priority": 0.8574629816357263
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 365.97,
+    "capacity_usage_percent": 36.6,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 11,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1547,
+        "neighborhood_id": 46,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.234477030108096,
+        "longitude": 28.889100909493422,
+        "fill_level": 0.9143608986938139,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "KIZILCIKLI MAHALLESİ",
+        "collection_priority": 0.857180449346907
+      },
+      {
+        "container_id": 974,
+        "neighborhood_id": 134,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.19396987567678,
+        "longitude": 28.912415205428474,
+        "fill_level": 0.9137959501246713,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "ERTUğRUL MAH.",
+        "collection_priority": 0.8568979750623357
+      }
+    ],
+    "total_distance_km": 4.92,
+    "total_load_liters": 923.37,
+    "capacity_usage_percent": 92.34,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 13,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 729,
+        "neighborhood_id": 19,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.21946171584314,
+        "longitude": 28.865492726207115,
+        "fill_level": 0.9128620539667496,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "CUMHURİYET MAHALLESİ",
+        "collection_priority": 0.8564310269833747
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 4564.31,
+    "capacity_usage_percent": 100.0,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 14,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 2302,
+        "neighborhood_id": 22,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.22649717013249,
+        "longitude": 28.864525552412164,
+        "fill_level": 0.9128531770612726,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇATALAĞIL MAHALLESİ",
+        "collection_priority": 0.8564265885306362
+      },
+      {
+        "container_id": 1849,
+        "neighborhood_id": 53,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.20528426095353,
+        "longitude": 28.8652585447957,
+        "fill_level": 0.9125625876183108,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "MAKŞEMPINARI MAHALLESİ",
+        "collection_priority": 0.8562812938091554
+      },
+      {
+        "container_id": 2414,
+        "neighborhood_id": 61,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.20195097305855,
+        "longitude": 28.944886502230492,
+        "fill_level": 0.9121623359730746,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "ÜRÜNLÜ MAHALLESİ",
+        "collection_priority": 0.8560811679865373
+      }
+    ],
+    "total_distance_km": 9.13,
+    "total_load_liters": 948.97,
+    "capacity_usage_percent": 94.9,
+    "container_count": 3
+  },
+  {
+    "vehicle_id": 15,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 2383,
+        "neighborhood_id": 56,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.209126233148766,
+        "longitude": 28.865879277779154,
+        "fill_level": 0.9117387904609348,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÖZLÜCE MAHALLESİ",
+        "collection_priority": 0.8558693952304673
+      },
+      {
+        "container_id": 1376,
+        "neighborhood_id": 42,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.18413447111814,
+        "longitude": 28.930161009577834,
+        "fill_level": 0.9117157321926933,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KADRİYE MAHALLESİ",
+        "collection_priority": 0.8558578660963466
+      }
+    ],
+    "total_distance_km": 6.13,
+    "total_load_liters": 920.84,
+    "capacity_usage_percent": 92.08,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 16,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 2242,
+        "neighborhood_id": 21,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.16849255686905,
+        "longitude": 28.860431481536864,
+        "fill_level": 0.911522270840053,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ÇAMLICA MAHALLESİ",
+        "collection_priority": 0.8557611354200264
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 4557.61,
+    "capacity_usage_percent": 100.0,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 18,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 2062,
+        "neighborhood_id": 62,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.19379018169662,
+        "longitude": 28.91487617019529,
+        "fill_level": 0.9113964951056687,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "YAYLACIK MAHALLESİ",
+        "collection_priority": 0.8556982475528343
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 701.78,
+    "capacity_usage_percent": 70.18,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 19,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1160,
+        "neighborhood_id": 135,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.207152508224034,
+        "longitude": 28.933274620770842,
+        "fill_level": 0.9105629054744181,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "GÖRÜKLE MAH.",
+        "collection_priority": 0.855281452737209
+      },
+      {
+        "container_id": 1573,
+        "neighborhood_id": 46,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.17946081594349,
+        "longitude": 28.89528709300819,
+        "fill_level": 0.9103978829242734,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KIZILCIKLI MAHALLESİ",
+        "collection_priority": 0.8551989414621367
+      }
+    ],
+    "total_distance_km": 4.46,
+    "total_load_liters": 919.54,
+    "capacity_usage_percent": 91.95,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 23,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 2155,
+        "neighborhood_id": 64,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.202083747229835,
+        "longitude": 28.941777155927266,
+        "fill_level": 0.9099941862860912,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "YÜZÜNCÜYIL MAHALLESİ",
+        "collection_priority": 0.8549970931430456
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 218.4,
+    "capacity_usage_percent": 21.84,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 25,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1956,
+        "neighborhood_id": 55,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.204183325563925,
+        "longitude": 28.903174063554594,
+        "fill_level": 0.9087826005457569,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ODUNLUK MAHALLESİ",
+        "collection_priority": 0.8543913002728784
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 4543.91,
+    "capacity_usage_percent": 100.0,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 26,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1130,
+        "neighborhood_id": 33,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.173058095837966,
+        "longitude": 28.866121474828354,
+        "fill_level": 0.9082689434265181,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÖLYAZI MAHALLESİ",
+        "collection_priority": 0.854134471713259
+      },
+      {
+        "container_id": 700,
+        "neighborhood_id": 18,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.185892902121594,
+        "longitude": 28.903844279728197,
+        "fill_level": 0.9077488522837105,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "BÜYÜKBALIKLI MAHALLESİ",
+        "collection_priority": 0.8538744261418553
+      }
+    ],
+    "total_distance_km": 3.51,
+    "total_load_liters": 916.95,
+    "capacity_usage_percent": 91.7,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 28,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1605,
+        "neighborhood_id": 131,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.23753777831077,
+        "longitude": 28.93644172009055,
+        "fill_level": 0.9076639228324614,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KONAK MAH.",
+        "collection_priority": 0.8538319614162307
+      },
+      {
+        "container_id": 1155,
+        "neighborhood_id": 33,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.15219730586018,
+        "longitude": 28.86892511968154,
+        "fill_level": 0.9074245808290462,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "GÖLYAZI MAHALLESİ",
+        "collection_priority": 0.853712290414523
+      }
+    ],
+    "total_distance_km": 11.09,
+    "total_load_liters": 916.68,
+    "capacity_usage_percent": 91.67,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 29,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1993,
+        "neighborhood_id": 58,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.179449798028564,
+        "longitude": 28.933150669380083,
+        "fill_level": 0.9070282809026258,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "UNÇUKURU MAHALLESİ",
+        "collection_priority": 0.8535141404513128
+      },
+      {
+        "container_id": 104,
+        "neighborhood_id": 3,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.17452548845926,
+        "longitude": 28.911212491544447,
+        "fill_level": 0.9063349547412762,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "29 EKİM MAHALLESİ",
+        "collection_priority": 0.853167477370638
+      },
+      {
+        "container_id": 2604,
+        "neighborhood_id": 41,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.19796928248109,
+        "longitude": 28.908789637554403,
+        "fill_level": 0.9065658433083449,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "İRFANİYE MAHALLESİ",
+        "collection_priority": 0.8532829216541724
+      }
+    ],
+    "total_distance_km": 4.56,
+    "total_load_liters": 797.83,
+    "capacity_usage_percent": 79.78,
+    "container_count": 3
+  },
+  {
+    "vehicle_id": 30,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 120,
+        "neighborhood_id": 4,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.18068362529755,
+        "longitude": 28.881053199043762,
+        "fill_level": 0.9054777273825196,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "30 AĞUSTOS ZAFER MAHALLESİ",
+        "collection_priority": 0.8527388636912597
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 697.22,
+    "capacity_usage_percent": 69.72,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 32,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 554,
+        "neighborhood_id": 129,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.17054478929444,
+        "longitude": 28.890013841534326,
+        "fill_level": 0.9045025554111252,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "BARIŞ MAH.",
+        "collection_priority": 0.8522512777055625
+      },
+      {
+        "container_id": 914,
+        "neighborhood_id": 28,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.19639022621813,
+        "longitude": 28.904338947686902,
+        "fill_level": 0.9041509707590127,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "ERTUĞRUL MAHALLESİ",
+        "collection_priority": 0.8520754853795064
+      }
+    ],
+    "total_distance_km": 3.12,
+    "total_load_liters": 434.08,
+    "capacity_usage_percent": 43.41,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 34,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 2019,
+        "neighborhood_id": 58,
+        "container_type": "770lt",
+        "capacity_liters": 770,
+        "latitude": 40.22309836279233,
+        "longitude": 28.871095500975205,
+        "fill_level": 0.9026323839625634,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "UNÇUKURU MAHALLESİ",
+        "collection_priority": 0.8513161919812816
+      },
+      {
+        "container_id": 2382,
+        "neighborhood_id": 56,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.23541364942958,
+        "longitude": 28.8603708057507,
+        "fill_level": 0.9026050241912615,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "ÖZLÜCE MAHALLESİ",
+        "collection_priority": 0.8513025120956307
+      }
+    ],
+    "total_distance_km": 1.64,
+    "total_load_liters": 911.65,
+    "capacity_usage_percent": 91.17,
+    "container_count": 2
+  },
+  {
+    "vehicle_id": 35,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 647,
+        "neighborhood_id": 132,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.15205350748228,
+        "longitude": 28.865915175405792,
+        "fill_level": 0.9021351131101825,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "BEŞEVLER MAH.",
+        "collection_priority": 0.8510675565550913
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 216.51,
+    "capacity_usage_percent": 21.65,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 40,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 139,
+        "neighborhood_id": 4,
+        "container_type": "underground",
+        "capacity_liters": 5000,
+        "latitude": 40.234052088387216,
+        "longitude": 28.89513238223454,
+        "fill_level": 0.9010145376495046,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "30 AĞUSTOS ZAFER MAHALLESİ",
+        "collection_priority": 0.8505072688247522
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 4505.07,
+    "capacity_usage_percent": 100.0,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 43,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1707,
+        "neighborhood_id": 49,
+        "container_type": "plastic",
+        "capacity_liters": 240,
+        "latitude": 40.167382667405505,
+        "longitude": 28.906463919932484,
+        "fill_level": 0.9008118120325758,
+        "last_collection_date": "2025-12-17",
+        "neighborhood_name": "KORUBAŞI MAHALLESİ",
+        "collection_priority": 0.8504059060162878
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 216.19,
+    "capacity_usage_percent": 21.62,
+    "container_count": 1
+  },
+  {
+    "vehicle_id": 44,
+    "vehicle_type": "Vinçli Araç",
+    "vehicle_capacity": 1000.0,
+    "containers": [
+      {
+        "container_id": 1481,
+        "neighborhood_id": 44,
+        "container_type": "400lt",
+        "capacity_liters": 400,
+        "latitude": 40.19805475660779,
+        "longitude": 28.91782447076539,
+        "fill_level": 0.9005518641276474,
+        "last_collection_date": "2025-12-18",
+        "neighborhood_name": "KARAMAN MAHALLESİ",
+        "collection_priority": 0.8502759320638237
+      }
+    ],
+    "total_distance_km": 0,
+    "total_load_liters": 360.22,
+    "capacity_usage_percent": 36.02,
+    "container_count": 1
+  }
+]

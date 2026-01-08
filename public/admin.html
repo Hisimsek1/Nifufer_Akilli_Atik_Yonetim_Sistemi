@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilüfer Belediyesi - Atık Yönetim Komuta Merkezi</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --municipal-navy: #1e3a5f;
+            --slate-primary: #334155;
+            --slate-secondary: #475569;
+            --slate-light: #64748b;
+            --success-muted: #16a34a;
+            --warning-muted: #ca8a04;
+            --critical-muted: #dc2626;
+            --bg-base: #f1f5f9;
+            --surface-white: #ffffff;
+            --border-light: #e2e8f0;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+        }
+        
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-base);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+        
+        /* Professional Header */
+        .header {
+            background: var(--municipal-navy);
+            border-bottom: 3px solid var(--slate-primary);
+            padding: 1rem 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: white;
+            font-size: 1.125rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .logo p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            font-weight: 400;
+        }
+        
+        /* Executive Summary Banner */
+        .exec-summary {
+            max-width: 1800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .summary-card {
+            background: var(--surface-white);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .summary-card:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+        }
+        
+        .summary-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            background: var(--bg-base);
+            border: 1px solid var(--border-light);
+        }
+        
+        .icon-savings {
+            background: var(--bg-base);
+        }
+        
+        .icon-emission {
+            background: var(--bg-base);
+        }
+        
+        .summary-card h3 {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .summary-value {
+            font-size: 1.875rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .summary-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        
+        /* Bento Grid Layout */
+        .bento-grid {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 2rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .bento-item {
+            background: var(--surface-white);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bento-kpi {
+            grid-column: span 3;
+        }
+        
+        .bento-map {
+            grid-column: span 8;
+            min-height: 600px;
+        }
+        
+        .bento-fleet {
+            grid-column: span 4;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        
+        .bento-insights {
+            grid-column: span 6;
+        }
+        
+        .bento-trends {
+            grid-column: span 6;
+        }
+        
+        /* KPI Cards */
+        .kpi-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .kpi-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            background: var(--bg-base);
+            border: 1px solid var(--border-light);
+        }
+        
+        .kpi-title {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .kpi-value {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            margin-top: 0.75rem;
+        }
+        
+        .kpi-detail {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.75rem;
+            line-height: 1.6;
+        }
+        
+        .kpi-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        .badge-success {
+            background: #f0fdf4;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .badge-warning {
+            background: #fefce8;
+            color: #a16207;
+            border: 1px solid #fde047;
+        }
+        
+        .badge-info {
+            background: #f0f9ff;
+            color: #075985;
+            border: 1px solid #bae6fd;
+        }
+        
+        /* Fleet Status */
+        .fleet-item {
+            background: var(--bg-base);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            padding: 0.875rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+        
+        .fleet-item:hover {
+            background: #f8fafc;
+        }
+        
+        .fleet-icon {
+            font-size: 1.25rem;
+        }
+        
+        .fleet-info {
+            flex: 1;
+        }
+        
+        .fleet-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+        
+        .fleet-status {
+            font-size: 0.6875rem;
+            color: var(--text-secondary);
+        }
+        
+        .fleet-capacity {
+            width: 60px;
+            text-align: right;
+        }
+        
+        .capacity-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 0.25rem;
+        }
+        
+        .capacity-fill {
+            height: 100%;
+            background: var(--municipal-navy);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+        
+        /* Cost Comparison */
+        .cost-comparison {
+            margin-top: 2rem;
+        }
+        
+        .cost-bar-container {
+            position: relative;
+            height: 48px;
+            background: var(--bg-base);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .cost-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: var(--success-muted);
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            transition: width 1s ease;
+        }
+        
+        .cost-label {
+            color: white;
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+        
+        .cost-legend {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        /* Map Container */
+        #routeMap {
+            width: 100%;
+            height: 550px;
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            filter: brightness(0.95) contrast(1.05);
+        }
+        
+        /* Animated Route Arrows */
+        @keyframes marchingAnts {
+            0% { stroke-dashoffset: 0; }
+            100% { stroke-dashoffset: 30; }
+        }
+        
+        /* Glow Effect for Routes */
+        .route-glow {
+            filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 12px currentColor);
+        }
+        
+        /* Pulsing Container Marker */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+        
+        .container-marker-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* AI Insights */
+        .insight-item {
+            background: var(--bg-base);
+            border-left: 3px solid var(--municipal-navy);
+            padding: 1rem;
+            border-radius: 2px;
+            margin-bottom: 0.75rem;
+            border-top: 1px solid var(--border-light);
+            border-right: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .insight-title {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .insight-text {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Neighborhood Scoreboard */
+        .scoreboard-item {
+            display: flex;
+            align-items: center;
+            gap: 0.875rem;
+            padding: 0.875rem;
+            background: var(--bg-base);
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .scoreboard-rank {
+            width: 32px;
+            height: 32px;
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        
+        .rank-1 {
+            background: #fbbf24;
+            color: white;
+        }
+        
+        .rank-2 {
+            background: #94a3b8;
+            color: white;
+        }
+        
+        .rank-3 {
+            background: #fb923c;
+            color: white;
+        }
+        
+        .scoreboard-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+        }
+        
+        .scoreboard-score {
+            font-weight: 600;
+            color: var(--success-muted);
+            font-size: 0.875rem;
+        }
+        
+        /* Controls */
+        .control-panel {
+            background: var(--bg-base);
+            padding: 1rem;
+            border-radius: 2px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-light);
+        }
+        
+        .btn-primary {
+            background: var(--municipal-navy);
+            color: white;
+            padding: 0.625rem 1.5rem;
+            border: none;
+            border-radius: 2px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.15s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn-primary:hover {
+            background: var(--slate-primary);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .select-modern {
+            padding: 0.625rem 0.875rem;
+            border: 1px solid var(--border-light);
+            border-radius: 2px;
+            font-size: 0.875rem;
+            font-weight: 400;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.15s ease;
+        }
+        
+        .select-modern:focus {
+            outline: none;
+            border-color: var(--municipal-navy);
+            box-shadow: 0 0 0 2px rgba(30, 58, 95, 0.1);
+        }
+        
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border-light);
+            border-top-color: var(--municipal-navy);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .bento-kpi, .bento-map, .bento-fleet, .bento-insights, .bento-trends {
+                grid-column: span 12 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>NİLÜFER BELEDİYESİ ATIĞ YÖNETİM KOMUTA MERKEZİ</h1>
+                <p>Entegre Operasyon ve Analiz Platformu</p>
+            </div>
+            <div>
+                <span style="color: rgba(255,255,255,0.9); margin-right: 1.5rem; font-size: 0.875rem;">Yönetici</span>
+                <a href="/" style="color: rgba(255,255,255,0.9); text-decoration: none; font-size: 0.875rem;">Ana Sayfa</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <div class="exec-summary">
+        <div class="summary-card">
+            <div class="summary-icon icon-savings">💰</div>
+            <h3>Günlük AI Optimizasyon Kazancı</h3>
+            <div class="summary-value" id="dailySavings">₺14,500</div>
+            <p class="summary-subtitle">Geçen haftaya göre %18 artış</p>
+        </div>
+        
+        <div class="summary-card">
+            <div class="summary-icon icon-emission">🌱</div>
+            <h3>Bugün Engellenen CO₂ Salınımı</h3>
+            <div class="summary-value" id="co2Saved">450 kg</div>
+            <p class="summary-subtitle">824 ağaca eşdeğer</p>
+        </div>
+    </div>
+
+    <!-- Bento Grid -->
+    <div class="bento-grid">
+        <!-- KPI Cards -->
+        <div class="bento-item bento-kpi">
+            <div class="kpi-header">
+                <div class="kpi-icon">
+                </div>
+                <div class="kpi-title">Ortalama Doluluk Oranı</div>
+            </div>
+            <div class="kpi-value" id="avgFillLevel">0%</div>
+            <div class="kpi-detail">
+                <span class="kpi-badge badge-success">Optimum Seviye</span>
+                <br>Tahmini Sonraki Boşaltma: <strong>2.5 saat</strong>
+            </div>
+        </div>
+
+        <div class="bento-item bento-kpi">
+            <div class="kpi-header">
+                <div class="kpi-icon">
+                </div>
+                <div class="kpi-title">Filo Durumu</div>
+            </div>
+            <div class="kpi-value" id="totalVehicles">45</div>
+            <div class="kpi-detail" id="fleetBreakdown">
+                <span class="kpi-badge badge-info">12 Görevde</span>
+                <span class="kpi-badge badge-warning">4 Bakımda</span>
+                <span class="kpi-badge badge-success">29 Hazır</span>
+            </div>
+        </div>
+
+        <div class="bento-item bento-kpi">
+            <div class="kpi-header">
+                <div class="kpi-icon">
+                </div>
+                <div class="kpi-title">Kritik Konteynerler</div>
+            </div>
+            <div class="kpi-value" id="criticalContainers">0</div>
+            <div class="kpi-detail">
+                Doluluk oranı >80% - Acil müdahale gerekli
+            </div>
+        </div>
+
+        <div class="bento-item bento-kpi">
+            <div class="kpi-header">
+                <div class="kpi-icon">
+                </div>
+                <div class="kpi-title">Toplam Mesafe</div>
+            </div>
+            <div class="kpi-value" id="totalDistance">0 km</div>
+            <div class="kpi-detail">
+                Tahmini Süre: <strong id="totalTime">0 dk</strong>
+            </div>
+        </div>
+
+        <!-- Map & Controls -->
+        <div class="bento-item bento-map">
+            <div class="control-panel">
+                <label style="font-weight: 500; color: var(--text-secondary); margin-right: 1rem; font-size: 0.875rem;">Minimum Öncelik:</label>
+                <input type="number" id="minPriority" value="0.6" step="0.1" min="0" max="1" 
+                       class="select-modern" style="width: 100px; margin-right: 1rem;">
+                
+                <button onclick="optimizeRoutes()" class="btn-primary">
+                    Rota Oluştur
+                </button>
+                
+                <select id="vehicleSelect" onchange="filterRouteByVehicle()" class="select-modern" style="margin-left: 1rem; width: 250px;">
+                    <option value="all">Tüm Araçlar (Özet)</option>
+                </select>
+            </div>
+            
+            <div id="routeMap"></div>
+            
+            <!-- Cost Comparison -->
+            <div class="cost-comparison">
+                <h3 style="font-weight: 600; color: #1e293b; margin-bottom: 1rem;">💡 Maliyet Kıyaslaması</h3>
+                <div class="cost-bar-container">
+                    <div class="cost-bar" style="width: 76%;">
+                        <span class="cost-label">AI Destekli: %76</span>
+                    </div>
+                </div>
+                <div class="cost-legend">
+                    <span>Geleneksel Yöntem: ₺100,000</span>
+                    <span style="color: var(--success-muted); font-weight: 500;">Optimizasyon Sonrası: ₺76,000</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fleet List -->
+        <div class="bento-item bento-fleet">
+            <h3 style="font-weight: 500; color: var(--text-primary); margin-bottom: 1rem; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.5px;">Canlı Filo Takibi</h3>
+            <div id="fleetList">
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.75rem;">Rota oluşturun...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Insights -->
+        <div class="bento-item bento-insights">
+            <h3 style="font-weight: 500; color: var(--text-primary); margin-bottom: 1rem; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.5px;">Karar Destek Analizleri</h3>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    <span>⚡</span> Pazartesi Günü Trafik Analizi
+                </div>
+                <div class="insight-text">
+                    Çamlıca bölgesinde atık üretimi Pazartesi günleri %20 artıyor. Sabah 07:00'de ek sefer planlanması önerilir.
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    Optimizasyon Fırsatı
+                </div>
+                <div class="insight-text">
+                    3 numaralı araç rota değişikliğiyle 4.2 km tasarruf sağlayabilir. Tahmin edilen yakıt kazançları: ₺180/hafta.
+                </div>
+            </div>
+            
+            <div class="insight-item">
+                <div class="insight-title">
+                    Trend Uyarısı
+                </div>
+                <div class="insight-text">
+                    Odunluk Mahallesi'nde son 2 haftada konteyner doluluk oranı %15 artmıştır. Ek konteyner yerleşimi değerlendirilmelidir.
+                </div>
+            </div>
+        </div>
+
+        <!-- Neighborhood Scoreboard -->
+        <div class="bento-item bento-trends">
+            <h3 style="font-weight: 500; color: var(--text-primary); margin-bottom: 1rem; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.5px;">Mahalle Bazında Geri Dönüşüm Performansı</h3>
+            
+            <div class="scoreboard-item">
+                <div class="scoreboard-rank rank-1">1</div>
+                <div class="scoreboard-name">Görükle Mahallesi</div>
+                <div class="scoreboard-score">94.5%</div>
+            </div>
+            
+            <div class="scoreboard-item">
+                <div class="scoreboard-rank rank-2">2</div>
+                <div class="scoreboard-name">Konak Mahallesi</div>
+                <div class="scoreboard-score">91.2%</div>
+            </div>
+            
+            <div class="scoreboard-item">
+                <div class="scoreboard-rank rank-3">3</div>
+                <div class="scoreboard-name">Ataevler Mahallesi</div>
+                <div class="scoreboard-score">88.7%</div>
+            </div>
+            
+            <div class="scoreboard-item">
+                <div class="scoreboard-rank" style="background: var(--border-light); color: var(--text-secondary);">4</div>
+                <div class="scoreboard-name">Fethiye Mahallesi</div>
+                <div class="scoreboard-score">85.3%</div>
+            </div>
+            
+            <div class="scoreboard-item">
+                <div class="scoreboard-rank" style="background: #e2e8f0; color: #64748b;">5</div>
+                <div class="scoreboard-name">Özlüce Mahallesi</div>
+                <div class="scoreboard-score">82.1%</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+    <script>
+        let routeMap = null;
+        let activeRouteLayer = null;
+        window.allRoutes = [];
+        
+        // Initialize map
+        document.addEventListener('DOMContentLoaded', function() {
+            routeMap = L.map('routeMap', {
+                zoomControl: false,
+                preferCanvas: true
+            }).setView([40.1885, 28.9784], 12);
+            
+            // Professional light tile layer for government dashboard
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(routeMap);
+            
+            // Add custom zoom control (bottom right)
+            L.control.zoom({
+                position: 'bottomright'
+            }).addTo(routeMap);
+            
+            // Add map legend
+            addMapLegend();
+            
+            // Animate savings counter
+            animateCounter('dailySavings', 14500, '₺');
+            animateCounter('co2Saved', 450, ' kg');
+        });
+        
+        function animateCounter(elementId, targetValue, suffix = '') {
+            const element = document.getElementById(elementId);
+            let current = 0;
+            const increment = targetValue / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= targetValue) {
+                    current = targetValue;
+                    clearInterval(timer);
+                }
+                element.textContent = suffix.startsWith('₺') 
+                    ? `₺${Math.floor(current).toLocaleString('tr-TR')}`
+                    : `${Math.floor(current)}${suffix}`;
+            }, 30);
+        }
+        
+        async function optimizeRoutes() {
+            const minPriority = parseFloat(document.getElementById('minPriority').value);
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            // Loading state
+            button.disabled = true;
+            button.textContent = 'Rotalar Hesaplanıyor...';
+            document.getElementById('fleetList').innerHTML = '<div class="loading"><div class="spinner"></div><p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.75rem;">Lütfen bekleyin, rotalar oluşturuluyor...</p></div>';
+            
+            try {
+                const response = await fetch('/api/fleet/optimize-routes', {
+                    method: 'GET'
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    window.allRoutes = data.routes;
+                    updateDashboard(data);
+                    populateVehicleSelect(data.routes);
+                    
+                    // İlk aracı seçili yap (OSRM yolları görsün)
+                    const firstVehicleId = data.routes.length > 0 ? data.routes[0].vehicle_id : 'all';
+                    document.getElementById('vehicleSelect').value = firstVehicleId;
+                    drawRoutes(firstVehicleId);
+                    
+                    updateFleetList(data.routes);
+                    console.log(`✓ ${data.routes.length} araç için rota oluşturuldu`);
+                } else {
+                    alert('Rota oluşturulamadı: ' + (data.message || 'Bilinmeyen hata'));
+                }
+            } catch (error) {
+                console.error('Rota optimizasyon hatası:', error);
+                alert('Sunucu bağlantı hatası. Lütfen tekrar deneyin.');
+            } finally {
+                button.disabled = false;
+                button.textContent = originalText;
+            }
+        }
+        
+        function updateDashboard(data) {
+            // Backend'den gelen 'summary' yapısını kullan
+            const summary = data.summary || {};
+            const routes = data.routes || [];
+            
+            // Ortalama doluluk (toplanan konteyner / toplam konteyner)
+            document.getElementById('avgFillLevel').textContent = 
+                `${((summary.assigned_containers || 0) / 2608 * 100).toFixed(1)}%`;
+            
+            // Toplam mesafe
+            document.getElementById('totalDistance').textContent = 
+                `${(summary.total_distance_km || 0).toFixed(1)} km`;
+            
+            // Toplam süre
+            document.getElementById('totalTime').textContent = 
+                `${Math.round((summary.total_time_hours || 0) * 60)} dk`;
+            
+            // Kritik konteyner sayısı (doluluk >= 80%)
+            let critical = 0;
+            routes.forEach(route => {
+                (route.container_details || []).forEach(c => {
+                    if (c.current_fill_level >= 0.8) critical++;
+                });
+            });
+            document.getElementById('criticalContainers').textContent = critical;
+        }
+        
+        function populateVehicleSelect(routes) {
+            const select = document.getElementById('vehicleSelect');
+            select.innerHTML = '<option value="all">Tüm Araçlar (Özet)</option>';
+            routes.forEach(route => {
+                const option = document.createElement('option');
+                option.value = route.vehicle_id;
+                option.textContent = `Araç ${route.vehicle_id} - ${route.vehicle_type} (${route.container_count} konteyner)`;
+                select.appendChild(option);
+            });
+        }
+        
+        function updateFleetList(routes) {
+            const fleetList = document.getElementById('fleetList');
+            fleetList.innerHTML = '';
+            
+            routes.forEach((route, idx) => {
+                const item = document.createElement('div');
+                item.className = 'fleet-item';
+                item.onclick = () => {
+                    document.getElementById('vehicleSelect').value = route.vehicle_id;
+                    filterRouteByVehicle();
+                };
+                
+                // Backend'den gelen yapı: capacity_usage, total_containers, total_distance_km
+                const capacityPercent = route.capacity_usage || 0;
+                
+                item.innerHTML = `
+                    <div class="fleet-icon"></div>
+                    <div class="fleet-info">
+                        <div class="fleet-name">Araç ${route.vehicle_id}</div>
+                        <div class="fleet-status">${route.total_containers} konteyner • ${route.total_distance_km} km</div>
+                        <div class="capacity-bar">
+                            <div class="capacity-fill" style="width: ${capacityPercent}%"></div>
+                        </div>
+                    </div>
+                    <div class="fleet-capacity">
+                        <strong>${capacityPercent}%</strong>
+                    </div>
+                `;
+                
+                fleetList.appendChild(item);
+            });
+        }
+        
+        function filterRouteByVehicle() {
+            const selectedVehicleId = document.getElementById('vehicleSelect').value;
+            drawRoutes(selectedVehicleId);
+        }
+        
+        async function drawRoutes(selectedVehicleId) {
+            if (!routeMap || !window.allRoutes.length) return;
+            
+            // CRITICAL: Remove previous route layer group (includes decorators, polylines, markers)
+            if (activeRouteLayer) {
+                routeMap.removeLayer(activeRouteLayer);
+                activeRouteLayer = null;
+            }
+            
+            // Create new layer group for this route rendering session
+            activeRouteLayer = L.featureGroup().addTo(routeMap);
+            
+            const colors = ['#0066B3', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+            
+            if (selectedVehicleId === 'all') {
+                // Show all routes (summary view) - simplified without OSRM for performance
+                for (let idx = 0; idx < window.allRoutes.length; idx++) {
+                    const route = window.allRoutes[idx];
+                    if (route.route_points && route.route_points.length > 0) {
+                        const color = colors[idx % colors.length];
+                        
+                        // Summary view: simple polyline (no OSRM for performance)
+                        L.polyline(route.route_points, {
+                            color: color,
+                            weight: 3,
+                            opacity: 0.6
+                        }).addTo(activeRouteLayer);
+                        
+                        route.route_points.forEach(point => {
+                            L.circleMarker(point, {
+                                radius: 4,
+                                fillColor: color,
+                                color: '#fff',
+                                weight: 1,
+                                opacity: 0.8,
+                                fillOpacity: 0.8
+                            }).addTo(activeRouteLayer);
+                        });
+                    }
+                }
+            } else {
+                // Show single route (detailed view) - SINGLE VEHICLE ONLY
+                const route = window.allRoutes.find(r => r.vehicle_id == selectedVehicleId);
+                if (route && route.container_details && route.container_details.length > 0) {
+                    const routeIdx = window.allRoutes.indexOf(route);
+                    const color = '#1e3a5f'; // Professional municipal navy (single color for clarity)
+                    const points = route.container_details.map(c => [c.latitude, c.longitude]);
+                    
+                    // Draw routed polyline (OSRM with road geometry)
+                    await drawOSRMRoute(points, color, false, activeRouteLayer);
+                    
+                    // Smooth fly-to animation
+                    const bounds = L.latLngBounds(points);
+                    routeMap.flyToBounds(bounds, {
+                        padding: [50, 50],
+                        duration: 1.5,
+                        easeLinearity: 0.25
+                    });
+                    
+                    // Add container markers to the managed layer group
+                    points.forEach((point, idx) => {
+                        const container = route.container_details[idx];
+                        const fillPercent = container.current_fill_level * 100;
+                        
+                        // Color based on fill level
+                        let fillColor;
+                        if (fillPercent >= 80) fillColor = '#ef4444'; // Red
+                        else if (fillPercent >= 60) fillColor = '#f59e0b'; // Amber
+                        else fillColor = '#10b981'; // Green
+                        
+                        // Pulsing ring marker
+                        const marker = L.circleMarker(point, {
+                            radius: 10,
+                            fillColor: fillColor,
+                            color: '#fff',
+                            weight: 3,
+                            opacity: 1,
+                            fillOpacity: 0.85,
+                            className: 'container-marker-pulse'
+                        }).addTo(activeRouteLayer); // Add to layer group
+                        
+                        // Outer glow ring
+                        L.circleMarker(point, {
+                            radius: 14,
+                            fillColor: 'transparent',
+                            color: fillColor,
+                            weight: 2,
+                            opacity: 0.4,
+                            fillOpacity: 0
+                        }).addTo(activeRouteLayer); // Add to layer group
+                        
+                        const numberIcon = L.divIcon({
+                            className: 'number-label',
+                            html: `<div style="background: ${color}; color: white; border: 2px solid white; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; box-shadow: 0 3px 8px rgba(0,0,0,0.4);">${idx + 1}</div>`,
+                            iconSize: [28, 28],
+                            iconAnchor: [14, 14]
+                        });
+                        
+                        L.marker(point, { icon: numberIcon }).addTo(activeRouteLayer); // FIX: activeRouteLayer kullan
+                        
+                        const fillPercentRounded = (container.current_fill_level * 100).toFixed(0);
+                        
+                        // Status badge
+                        let statusBadge, statusColor;
+                        if (fillPercentRounded >= 80) {
+                            statusBadge = 'ACİL';
+                            statusColor = '#ef4444';
+                        } else if (fillPercentRounded >= 60) {
+                            statusBadge = 'YAKINDA';
+                            statusColor = '#f59e0b';
+                        } else {
+                            statusBadge = 'NORMAL';
+                            statusColor = '#10b981';
+                        }
+                        
+                        marker.bindPopup(`
+                            <div style="font-family: IBM Plex Sans; min-width: 200px; background: white; padding: 12px; border-radius: 4px; border: 1px solid #e2e8f0;">
+                                <div style="font-weight: 600; font-size: 13px; margin-bottom: 8px; color: ${color}; border-bottom: 1px solid ${color}; padding-bottom: 4px;">
+                                    Durak #${idx + 1}
+                                </div>
+                                <div style="margin-bottom: 4px; font-size: 12px;">
+                                    <strong>Doluluk:</strong> 
+                                    <span style="color: ${statusColor}; font-weight: 600;">${fillPercentRounded}%</span>
+                                </div>
+                                <div style="margin-bottom: 4px; font-size: 12px;"><strong>Tip:</strong> ${container.container_type}</div>
+                                <div style="margin-bottom: 4px; font-size: 12px;"><strong>Kapasite:</strong> ${container.capacity_liters}L</div>
+                                <div style="margin-top: 8px; padding: 6px; background: ${statusColor}15; border: 1px solid ${statusColor}30; border-radius: 2px; text-align: center; font-size: 11px;">
+                                    <strong style="color: ${statusColor};">${statusBadge}</strong>
+                                </div>
+                            </div>
+                        `);
+                        
+                        marker.on('mouseover', function() { this.openPopup(); });
+                    });
+                    
+                    // Add waste transfer center and return route
+                    const wasteCenter = [40.2337, 28.8784]; // Nilüfer Atık Transfer Merkezi
+                    const lastPoint = points[points.length - 1];
+                    
+                    // Draw return route to waste center (add to managed layer)
+                    await drawOSRMRoute([lastPoint, wasteCenter], '#ef4444', true, activeRouteLayer);
+                    
+                    // Add waste center marker
+                    const wasteCenterIcon = L.divIcon({
+                        className: 'waste-center-icon',
+                        html: `<div style="background: #dc2626; color: white; border: 2px solid white; border-radius: 4px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">ATM</div>`,
+                        iconSize: [40, 40],
+                        iconAnchor: [20, 20]
+                    });
+                    
+                    const wasteCenterMarker = L.marker(wasteCenter, { icon: wasteCenterIcon }).addTo(activeRouteLayer);
+                    
+                    wasteCenterMarker.bindPopup(`
+                        <div style="font-family: IBM Plex Sans; min-width: 220px;">
+                            <div style="font-weight: 600; font-size: 14px; margin-bottom: 8px; color: #ef4444; border-bottom: 1px solid #ef4444; padding-bottom: 6px;">
+                                Atık Transfer Merkezi
+                            </div>
+                            <div style="margin-bottom: 4px; font-size: 12px;"><strong>Konum:</strong> Nilüfer Belediyesi</div>
+                            <div style="margin-bottom: 4px; font-size: 12px;"><strong>Durak Sırası:</strong> ${points.length + 1} (SON)</div>
+                            <div style="margin-bottom: 4px; font-size: 12px;"><strong>Toplanan Yük:</strong> ${(route.total_weight_tons * 1000).toFixed(0)} kg</div>
+                            <div style="margin-top: 8px; padding: 8px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 4px; text-align: center; font-size: 11px;">
+                                <strong style="color: #dc2626;">BOŞALTMA NOKTASI</strong>
+                            </div>
+                        </div>
+                    `);
+                }
+            }
+        }
+        
+        async function drawOSRMRoute(points, color, isReturnRoute = false, targetLayer = null) {
+            if (points.length < 2) return;
+            
+            // Use provided layer group or fallback to map
+            const layerTarget = targetLayer || routeMap;
+            
+            try {
+                // OSRM limiti: max 100 waypoint, max URL 8192 chars
+                // Eğer çok fazla nokta varsa, sadece ilk, son ve ara noktaları kullan
+                let routePoints = points;
+                if (points.length > 25) {
+                    // Her 3 noktadan 1'ini al + ilk ve son nokta
+                    routePoints = points.filter((p, idx) => 
+                        idx === 0 || 
+                        idx === points.length - 1 || 
+                        idx % 3 === 0
+                    );
+                    console.log(`OSRM: ${points.length} nokta -> ${routePoints.length} noktaya düşürüldü`);
+                }
+                
+                const coords = routePoints.map(p => `${p[1]},${p[0]}`).join(';');
+                const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${coords}?overview=full&geometries=geojson`;
+                
+                // Timeout ekle (3 saniye)
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 3000);
+                
+                const response = await fetch(osrmUrl, { signal: controller.signal });
+                clearTimeout(timeoutId);
+                const data = await response.json();
+                
+                if (data.code === 'Ok' && data.routes && data.routes[0]) {
+                    const routeGeoJSON = data.routes[0].geometry;
+                    const routeCoords = routeGeoJSON.coordinates.map(coord => [coord[1], coord[0]]);
+                    const distance = (data.routes[0].distance / 1000).toFixed(1); // km
+                    const duration = Math.round(data.routes[0].duration / 60); // minutes
+                    
+                    console.log(`✓ OSRM route: ${distance}km, ${duration}min, ${routeCoords.length} geometry points`);
+                    
+                    // Glow layer (backdrop) - add to managed layer
+                    L.polyline(routeCoords, {
+                        color: isReturnRoute ? '#ef4444' : color,
+                        weight: isReturnRoute ? 10 : 12,
+                        opacity: 0.3,
+                        lineJoin: 'round',
+                        lineCap: 'round',
+                        className: 'route-glow'
+                    }).addTo(layerTarget);
+                    
+                    // Main route line - add to managed layer
+                    const mainLine = L.polyline(routeCoords, {
+                        color: isReturnRoute ? '#ef4444' : color,
+                        weight: isReturnRoute ? 5 : 6,
+                        opacity: isReturnRoute ? 0.9 : 0.95,
+                        lineJoin: 'round',
+                        lineCap: 'round',
+                        dashArray: isReturnRoute ? '15, 10' : null
+                    }).addTo(layerTarget);
+                    
+                    // Animated direction arrows - CRITICAL: add to managed layer
+                    if (!isReturnRoute) {
+                        const arrowDecorator = L.polylineDecorator(mainLine, {
+                            patterns: [
+                                {
+                                    offset: '0%',
+                                    repeat: 100,
+                                    symbol: L.Symbol.arrowHead({
+                                        pixelSize: 12,
+                                        polygon: false,
+                                        pathOptions: {
+                                            stroke: true,
+                                            weight: 3,
+                                            color: '#ffffff',
+                                            opacity: 0.8
+                                        }
+                                    })
+                                }
+                            ]
+                        }).addTo(layerTarget); // CRITICAL FIX: Add decorator to managed layer
+                    }
+                    
+                    // Route info popup on click
+                    mainLine.bindPopup(`
+                        <div style="font-family: IBM Plex Sans; min-width: 160px; text-align: center; padding: 8px;">
+                            <div style="font-weight: 600; font-size: 12px; margin-bottom: 8px; color: ${isReturnRoute ? '#ef4444' : color}; text-transform: uppercase;">
+                                ${isReturnRoute ? 'Dönüş Rotası' : 'Toplama Rotası'}
+                            </div>
+                            <div style="display: flex; justify-content: space-around; margin-top: 8px; gap: 12px;">
+                                <div>
+                                    <div style="font-size: 18px; font-weight: 600; color: var(--text-primary);">${distance} km</div>
+                                    <div style="font-size: 10px; color: var(--text-secondary);">Mesafe</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 18px; font-weight: 600; color: var(--text-primary);">~${duration} dk</div>
+                                    <div style="font-size: 10px; color: var(--text-secondary);">Süre</div>
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                    
+                } else {
+                    // OSRM failed - use straight line fallback with visual indicator
+                    console.warn('⚠️ OSRM yanıt hatası:', data.code, '- Düz çizgi kullanılıyor');
+                    L.polyline(points, {
+                        color: '#ef4444', // Red to indicate fallback mode
+                        weight: 4,
+                        opacity: 0.5,
+                        dashArray: '10, 5', // Dashed to show it's not real route
+                        className: 'fallback-route'
+                    }).addTo(layerTarget);
+                }
+            } catch (error) {
+                // Network error or timeout - use straight line fallback
+                console.warn('⚠️ OSRM bağlantı hatası:', error.message, '- Düz çizgi kullanılıyor');
+                L.polyline(points, {
+                    color: '#ef4444', // Red to indicate fallback mode
+                    weight: 4,
+                    opacity: 0.5,
+                    dashArray: '10, 5'
+                }).addTo(layerTarget);
+            }
+        }
+        
+        // Add map legend
+        function addMapLegend() {
+            const legend = L.control({position: 'bottomleft'});
+            
+            legend.onAdd = function(map) {
+                const div = L.DomUtil.create('div', 'info legend');
+                div.style.cssText = `
+                    background: rgba(255, 255, 255, 0.95);
+                    backdrop-filter: blur(10px);
+                    padding: 15px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+                    font-family: Inter, sans-serif;
+                    font-size: 13px;
+                    line-height: 1.8;
+                `;
+                
+                div.innerHTML = `
+                    <div style="font-weight: 500; margin-bottom: 10px; color: var(--text-primary); font-size: 11px; border-bottom: 1px solid var(--border-light); padding-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Harita Kılavuzu
+                    </div>
+                    
+                    <div style="font-weight: 500; color: var(--text-secondary); font-size: 10px; margin: 10px 0 5px 0; text-transform: uppercase; letter-spacing: 0.3px;">
+                        Konteyner Durumu
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                        <div style="width: 8px; height: 8px; background: #10b981; border-radius: 1px; border: 1px solid white;"></div>
+                        <span style="color: var(--text-secondary); font-size: 10px;">Doluluk < %60</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                        <div style="width: 8px; height: 8px; background: #f59e0b; border-radius: 1px; border: 1px solid white;"></div>
+                        <span style="color: var(--text-secondary); font-size: 10px;">Doluluk %60-80</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <div style="width: 8px; height: 8px; background: #ef4444; border-radius: 1px; border: 1px solid white;"></div>
+                        <span style="color: var(--text-secondary); font-size: 10px;">Doluluk > %80</span>
+                    </div>
+                    
+                    <div style="font-weight: 500; color: var(--text-secondary); font-size: 10px; margin: 10px 0 5px 0; text-transform: uppercase; letter-spacing: 0.3px;">
+                        Rota Tipleri
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                        <div style="width: 24px; height: 3px; background: var(--municipal-navy); border-radius: 1px;"></div>
+                        <span style="color: var(--text-secondary); font-size: 10px;">Toplama Rotası</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
+                        <div style="width: 24px; height: 3px; background: #ef4444; border-radius: 1px; position: relative;">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: repeating-linear-gradient(90deg, transparent, transparent 3px, white 3px, white 5px);"></div>
+                        </div>
+                        <span style="color: var(--text-secondary); font-size: 10px;">Merkeze Dönüş</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                        <div style="width: 8px; height: 8px; background: var(--critical-muted); border-radius: 1px;"></div>
+                        <span style="color: var(--text-secondary); font-size: 10px;">Atık Transfer Merkezi</span>
+                    </div>
+                `;
+                
+                return div;
+            };
+            
+            legend.addTo(routeMap);
+        }
+    </script>
+</body>
+</html>

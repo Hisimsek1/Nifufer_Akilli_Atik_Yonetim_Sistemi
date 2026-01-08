@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "model_name": "GradientBoosting",
+    "mae": 0.00037319083907070606,
+    "rmse": 0.0007754302649906323,
+    "r2_score": 0.9999873988144846,
+    "train_size": 2085,
+    "test_size": 522,
+    "timestamp": "2025-12-28T01:42:50.228270"
+  },
+  "feature_importance": {
+    "days_since_collection": 0.8564989401062387,
+    "day_of_week": 0.012368800246097069,
+    "month": 0.0,
+    "is_weekend": 0.0,
+    "collection_days_per_week": 2.3908006545602705e-07,
+    "type_encoded": 2.5528668414405393e-07,
+    "capacity_category": 2.242948625717927e-07,
+    "population_density": 1.3980910142835837e-06,
+    "current_fill_level": 0.13113014289503755
+  }
+}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Atık Yönetim - Nilüfer Belediyesi</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: #F5F5F5;
+            color: #333;
+        }
+        .header {
+            background: #0066B3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .auth-panel {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .auth-panel h2 {
+            color: #0066B3;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #0066B3;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #0066B3;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #004d87;
+        }
+        .btn-success {
+            background: #00A651;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #008040;
+        }
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+            width: auto;
+            padding: 10px 30px;
+        }
+        .switch-form {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        .switch-form a {
+            color: #0066B3;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+        .user-info {
+            text-align: center;
+        }
+        .user-info h3 {
+            color: #0066B3;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+        .user-info .user-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .user-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0 30px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00A651;
+            display: block;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #0066B3 0%, #004d87 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-card h3 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .stat-card p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .leaderboard {
+            margin-top: 40px;
+        }
+        .leaderboard h2 {
+            color: #0066B3;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .leaderboard-item {
+            background: white;
+            border: 2px solid #f0f0f0;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .leaderboard-item.top {
+            background: linear-gradient(135deg, #fff8e1 0%, #fff3cd 100%);
+            border-color: #ffc107;
+        }
+        .rank {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0066B3;
+            width: 40px;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗑️ Nilüfer Akıllı Atık Yönetim Sistemi</h1>
+        <p>Vatandaş Paneli</p>
+    </div>
+
+    <div class="container">
+        <!-- GİRİŞ/KAYIT PANELİ -->
+        <div id="authPanel" class="auth-panel">
+            <!-- Giriş Formu -->
+            <div id="loginForm">
+                <h2>Giriş Yap</h2>
+                <div id="loginError" class="alert alert-error hidden"></div>
+                <form onsubmit="login(event)">
+                    <div class="form-group">
+                        <label>TC Kimlik Numarası</label>
+                        <input type="text" id="loginTC" placeholder="12345678901" maxlength="11" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre</label>
+                        <input type="password" id="loginPassword" placeholder="Şifrenizi girin" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                </form>
+                <div class="switch-form">
+                    Hesabınız yok mu? <a href="#" onclick="showRegister(); return false;">Kayıt Ol</a>
+                </div>
+            </div>
+
+            <!-- Kayıt Formu -->
+            <div id="registerForm" class="hidden">
+                <h2>Kayıt Ol</h2>
+                <div id="registerError" class="alert alert-error hidden"></div>
+                <form onsubmit="register(event)">
+                    <div class="form-group">
+                        <label>Ad Soyad</label>
+                        <input type="text" id="registerName" placeholder="Ahmet Yılmaz" required>
+                    </div>
+                    <div class="form-group">
+                        <label>TC Kimlik Numarası</label>
+                        <input type="text" id="registerTC" placeholder="12345678901" maxlength="11" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon</label>
+                        <input type="tel" id="registerPhone" placeholder="0532 123 4567" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Şifre (En az 6 karakter)</label>
+                        <input type="password" id="registerPassword" placeholder="Şifrenizi belirleyin" minlength="6" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Kayıt Ol</button>
+                </form>
+                <div class="switch-form">
+                    Zaten hesabınız var mı? <a href="#" onclick="showLogin(); return false;">Giriş Yap</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KULLANICI BİLGİ PANELİ -->
+        <div id="userPanel" class="auth-panel hidden">
+            <div class="user-info">
+                <h3>🎉 Hoş Geldiniz!</h3>
+                <div class="user-name" id="userName"></div>
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="userTrustScore">0.00</span>
+                        <span class="stat-label">Güven Puanı</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="userReports">0</span>
+                        <span class="stat-label">Toplam Bildirim</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn btn-danger">Çıkış Yap</button>
+            </div>
+        </div>
+
+        <!-- ANA İÇERİK -->
+        <div id="mainContent" class="main-content hidden">
+            <h2 style="color: #0066B3; margin-bottom: 20px;">📊 Sistem Dashboard'u</h2>
+            
+            <div class="dashboard-stats" id="dashboardStats">
+                <div class="stat-card">
+                    <h3 id="totalContainers">0</h3>
+                    <p>Toplam Konteyner</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="fullContainers">0</h3>
+                    <p>Dolu Konteyner</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="fillRate">0%</h3>
+                    <p>Doluluk Oranı</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="todayCollections">0</h3>
+                    <p>Bugünkü Toplama</p>
+                </div>
+            </div>
+
+            <div class="leaderboard">
+                <h2>🏆 Liderlik Tablosu</h2>
+                <div id="leaderboardList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentUser = null;
+
+        // Form geçişleri
+        function showRegister() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+        }
+
+        // Kayıt
+        async function register(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('registerName').value;
+            const tc = document.getElementById('registerTC').value;
+            const phone = document.getElementById('registerPhone').value;
+            const password = document.getElementById('registerPassword').value;
+            
+            // TC validasyon
+            if (tc.length !== 11 || !/^\d+$/.test(tc)) {
+                showError('registerError', 'TC numarası 11 haneli olmalıdır!');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/auth/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, tc_number: tc, phone, password })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    showError('registerError', data.message, 'success');
+                    setTimeout(() => {
+                        showLogin();
+                        document.querySelector('#registerForm form').reset();
+                    }, 2000);
+                } else {
+                    showError('registerError', data.error || 'Kayıt başarısız!');
+                }
+            } catch (error) {
+                showError('registerError', 'Bağlantı hatası!');
+            }
+        }
+
+        // Giriş
+        async function login(event) {
+            event.preventDefault();
+            
+            const tc = document.getElementById('loginTC').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ tc_number: tc, password })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentUser = data.user;
+                    localStorage.setItem('user', JSON.stringify(currentUser));
+                    showUserPanel();
+                } else {
+                    showError('loginError', data.error || 'Giriş başarısız!');
+                }
+            } catch (error) {
+                showError('loginError', 'Bağlantı hatası!');
+            }
+        }
+
+        // Çıkış
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('user');
+            document.getElementById('authPanel').classList.remove('hidden');
+            document.getElementById('userPanel').classList.add('hidden');
+            document.getElementById('mainContent').classList.add('hidden');
+            showLogin();
+        }
+
+        // Kullanıcı panelini göster
+        function showUserPanel() {
+            document.getElementById('authPanel').classList.add('hidden');
+            document.getElementById('userPanel').classList.remove('hidden');
+            document.getElementById('mainContent').classList.remove('hidden');
+            
+            // Kullanıcı bilgilerini güncelle
+            document.getElementById('userName').textContent = currentUser.name;
+            document.getElementById('userTrustScore').textContent = currentUser.trust_score.toFixed(2);
+            document.getElementById('userReports').textContent = currentUser.total_reports || 0;
+            
+            // Dashboard verilerini yükle
+            loadDashboard();
+            loadLeaderboard();
+        }
+
+        // Dashboard
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/dashboard/stats');
+                const data = await response.json();
+                
+                document.getElementById('totalContainers').textContent = data.total_containers;
+                document.getElementById('fullContainers').textContent = data.full_containers;
+                document.getElementById('fillRate').textContent = (data.fill_rate * 100).toFixed(1) + '%';
+                document.getElementById('todayCollections').textContent = data.today_collections;
+            } catch (error) {
+                console.error('Dashboard yüklenemedi:', error);
+            }
+        }
+
+        // Liderlik tablosu
+        async function loadLeaderboard() {
+            try {
+                const response = await fetch('/api/leaderboard');
+                const data = await response.json();
+                
+                const listEl = document.getElementById('leaderboardList');
+                listEl.innerHTML = data.leaderboard.map(user => `
+                    <div class="leaderboard-item ${user.rank <= 3 ? 'top' : ''}">
+                        <span class="rank">${user.rank}</span>
+                        <span style="flex: 1; font-weight: 500;">${user.name}</span>
+                        <span style="color: #00A651; font-weight: 600;">${user.trust_score.toFixed(2)}</span>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Liderlik tablosu yüklenemedi:', error);
+            }
+        }
+
+        // Hata göster
+        function showError(elementId, message, type = 'error') {
+            const el = document.getElementById(elementId);
+            el.textContent = message;
+            el.className = `alert alert-${type}`;
+            el.classList.remove('hidden');
+            setTimeout(() => el.classList.add('hidden'), 5000);
+        }
+
+        // Sayfa yüklendiğinde oturum kontrolü
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedUser = localStorage.getItem('user');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showUserPanel();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Nilüfer Atık Yönetim</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0066B3;
+            margin-bottom: 20px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+        }
+        .test-section h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        button {
+            background: #0066B3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background: #004d87;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #0066B3;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        .success { border-left-color: #00A651; background: #d4edda; }
+        .error { border-left-color: #dc3545; background: #f8d7da; }
+        .loading { opacity: 0.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Nilüfer Atık Yönetim API Test Sayfası</h1>
+        
+        <!-- Test 1: Dashboard Stats -->
+        <div class="test-section">
+            <h2>📊 Test 1: Dashboard İstatistikleri</h2>
+            <button onclick="testDashboard()">Test Et</button>
+            <div id="result-dashboard" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 2: Leaderboard -->
+        <div class="test-section">
+            <h2>🏆 Test 2: Liderlik Tablosu</h2>
+            <button onclick="testLeaderboard()">Test Et</button>
+            <div id="result-leaderboard" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 3: Container List -->
+        <div class="test-section">
+            <h2>🗑️ Test 3: Dolu Konteynerleri Listele</h2>
+            <button onclick="testFullContainers()">Test Et</button>
+            <div id="result-containers" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 4: Prediction -->
+        <div class="test-section">
+            <h2>🤖 Test 4: AI Tahmini</h2>
+            <input type="number" id="container-id" placeholder="Konteyner ID" value="1" style="padding:10px; margin-right:10px; border:2px solid #ddd; border-radius:5px;">
+            <button onclick="testPrediction()">Tahmin Al</button>
+            <div id="result-prediction" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 5: Login -->
+        <div class="test-section">
+            <h2>🔐 Test 5: Kullanıcı Girişi (TC ile)</h2>
+            <input type="text" id="tc-login" placeholder="TC Numarası" value="12345678901" style="padding:10px; margin-right:10px; border:2px solid #ddd; border-radius:5px; width:200px;">
+            <input type="password" id="password-login" placeholder="Şifre" value="test123" style="padding:10px; margin-right:10px; border:2px solid #ddd; border-radius:5px; width:150px;">
+            <button onclick="testLogin()">Giriş Yap</button>
+            <div id="result-login" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 6: Submit Report -->
+        <div class="test-section">
+            <h2>📝 Test 6: Bildirim Gönder (Giriş gerekli)</h2>
+            <input type="number" id="report-container" placeholder="Konteyner ID" value="1" style="padding:10px; margin-right:10px; border:2px solid #ddd; border-radius:5px; width:150px;">
+            <input type="number" id="report-fill" placeholder="Doluluk %" value="85" min="0" max="100" style="padding:10px; margin-right:10px; border:2px solid #ddd; border-radius:5px; width:120px;">
+            <button onclick="testSubmitReport()">Bildirim Gönder</button>
+            <div id="result-report" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 7: Map Data -->
+        <div class="test-section">
+            <h2>🗺️ Test 7: Harita Verileri</h2>
+            <button onclick="testMapData()">Harita Verilerini Al</button>
+            <div id="result-map" class="result" style="display:none"></div>
+        </div>
+        
+        <!-- Test 8: Route Optimization -->
+        <div class="test-section">
+            <h2>🚛 Test 8: Rota Optimizasyonu</h2>
+            <button onclick="testRouteOptimization()">Rotaları Optimize Et</button>
+            <div id="result-routes" class="result" style="display:none"></div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api';
+        let currentUser = null;
+        
+        // Helper Functions
+        function showResult(elementId, data, isError = false) {
+            const el = document.getElementById(elementId);
+            el.style.display = 'block';
+            el.className = 'result ' + (isError ? 'error' : 'success');
+            el.textContent = typeof data === 'string' ? data : JSON.stringify(data, null, 2);
+        }
+        
+        async function apiCall(endpoint, method = 'GET', data = null) {
+            try {
+                const options = {
+                    method,
+                    headers: { 'Content-Type': 'application/json' }
+                };
+                
+                if (data) options.body = JSON.stringify(data);
+                
+                const response = await fetch(API_URL + endpoint, options);
+                const result = await response.json();
+                
+                if (!response.ok) throw new Error(result.error || 'API Error');
+                
+                return result;
+            } catch (error) {
+                throw error;
+            }
+        }
+        
+        // Tests
+        async function testDashboard() {
+            try {
+                const data = await apiCall('/dashboard/stats');
+                showResult('result-dashboard', data);
+            } catch (error) {
+                showResult('result-dashboard', error.message, true);
+            }
+        }
+        
+        async function testLeaderboard() {
+            try {
+                const data = await apiCall('/leaderboard');
+                showResult('result-leaderboard', data);
+            } catch (error) {
+                showResult('result-leaderboard', error.message, true);
+            }
+        }
+        
+        async function testFullContainers() {
+            try {
+                const data = await apiCall('/containers/full');
+                showResult('result-containers', data);
+            } catch (error) {
+                showResult('result-containers', error.message, true);
+            }
+        }
+        
+        async function testPrediction() {
+            try {
+                const containerId = document.getElementById('container-id').value;
+                const data = await apiCall(`/predict/${containerId}`);
+                showResult('result-prediction', data);
+            } catch (error) {
+                showResult('result-prediction', error.message, true);
+            }
+        }
+        
+        async function testLogin() {
+            try {
+                const tc = document.getElementById('tc-login').value;
+                const password = document.getElementById('password-login').value;
+                
+                const data = await apiCall('/auth/login', 'POST', {
+                    tc_number: tc,
+                    password: password
+                });
+                
+                if (data.success) {
+                    currentUser = data.user;
+                    showResult('result-login', 'GİRİŞ BAŞARILI!\n\n' + JSON.stringify(data.user, null, 2));
+                } else {
+                    throw new Error('Giriş başarısız');
+                }
+            } catch (error) {
+                showResult('result-login', error.message, true);
+            }
+        }
+        
+        async function testSubmitReport() {
+            if (!currentUser) {
+                showResult('result-report', 'Önce giriş yapın!', true);
+                return;
+            }
+            
+            try {
+                const containerId = document.getElementById('report-container').value;
+                const fillLevel = document.getElementById('report-fill').value;
+                
+                const data = await apiCall('/reports/submit', 'POST', {
+                    user_id: currentUser.id,
+                    container_id: parseInt(containerId),
+                    fill_level: parseInt(fillLevel),
+                    notes: 'Test bildirimi'
+                });
+                
+                showResult('result-report', data);
+            } catch (error) {
+                showResult('result-report', error.message, true);
+            }
+        }
+        
+        async function testMapData() {
+            try {
+                const data = await apiCall('/containers/map');
+                const summary = {
+                    total: data.count,
+                    sample: data.containers.slice(0, 5)  // İlk 5 konteyner
+                };
+                showResult('result-map', summary);
+            } catch (error) {
+                showResult('result-map', error.message, true);
+            }
+        }
+        
+        async function testRouteOptimization() {
+            try {
+                const data = await apiCall('/fleet/optimize-routes');
+                showResult('result-routes', data);
+            } catch (error) {
+                showResult('result-routes', error.message, true);
+            }
+        }
+    </script>
+</body>
+</html>
